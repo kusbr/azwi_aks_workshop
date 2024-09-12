@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-name: workload
-namespace: test
-labels:
+  name: workload
+  namespace: test
+  labels:
     app: workload
     azure.workload.identity/use: "true"
 spec:
-selector:
+  selector:
     matchLabels:
-        app: workload
-template:
+      app: workload
+  template:
     metadata:
-    labels:
+      labels:
         app: workload
         azure.workload.identity/use: "true"
     spec:
-        serviceAccountName: workload
-    containers:
-        - name: workload
-          image: "your container registry path for the workload"
-          imagePullPolicy: Always
+      serviceAccountName: workload
+      containers:
+      - name: workload
+        image: "docker.io/kumsub/azwidemoworkload:1.0"
+        imagePullPolicy: Always

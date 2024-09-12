@@ -166,3 +166,18 @@
 
 1. Deploy onto AKS
 
+    - Follow [link](https://github.com/Azure/azure-workload-identity/blob/main/docs/book/src/installation/mutating-admission-webhook.md)
+
+    - Console
+
+            az aks get-credentials -n {your aks name} -g {your rg name}
+
+        
+    - Cosnole: Create namespace "test"
+
+            kubectl create ns test
+
+
+    - Console: Deploy workload
+
+            kubectl apply -f ./k8s

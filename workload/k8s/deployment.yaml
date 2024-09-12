@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: workload
+namespace: test
+labels:
+    app: workload
+    azure.workload.identity/use: "true"
+spec:
+selector:
+    matchLabels:
+        app: workload
+template:
+    metadata:
+    labels:
+        app: workload
+        azure.workload.identity/use: "true"
+    spec:
+        serviceAccountName: workload
+    containers:
+        - name: workload
+          image: "your container registry path for the workload"
+          imagePullPolicy: Always

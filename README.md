@@ -181,3 +181,7 @@
     - Console: Deploy workload
 
             kubectl apply -f ./k8s
+
+2. Fix Errors
+
+    - Add Federated credential to MSI
